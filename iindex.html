@@ -1,118 +1,230 @@
-// ===============================
-// EFEITO DE DIGITAÇÃO
-// ===============================
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-const texto = [
-    "Desenvolvedora Web",
-    "Estudante de ADS",
-    "Apaixonada por Tecnologia",
-    "Em busca da primeira oportunidade"
-];
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatiane Barbosa | Desenvolvedora Web</title>
 
-let contadorTexto = 0;
-let contadorLetra = 0;
-let apagando = false;
+    <link rel="stylesheet" href="style.css">
 
-const elemento = document.getElementById("digitando");
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-function escrever() {
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    const palavra = texto[contadorTexto];
+    <script src="https://kit.fontawesome.com/4d4e7b4d72.js" crossorigin="anonymous"></script>
+</head>
 
-    if (!apagando) {
+<body>
 
-        elemento.textContent = palavra.substring(0, contadorLetra++);
-        
-        if (contadorLetra > palavra.length) {
-            apagando = true;
-            setTimeout(escrever, 1500);
-            return;
-        }
+    <header>
 
-    } else {
+        <nav>
 
-        elemento.textContent = palavra.substring(0, contadorLetra--);
+            <h2 class="logo">Tatiane Barbosa</h2>
 
-        if (contadorLetra < 0) {
-            apagando = false;
-            contadorTexto = (contadorTexto + 1) % texto.length;
-        }
+            <ul>
 
-    }
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
 
-    setTimeout(escrever, apagando ? 50 : 100);
-}
+            </ul>
 
-escrever();
+            <button id="darkMode">
+                <i class="fas fa-moon"></i>
+            </button>
 
+        </nav>
 
-// ===============================
-// MODO ESCURO
-// ===============================
+    </header>
 
-const botaoDark = document.getElementById("darkMode");
+    <section id="home" class="hero">
 
-botaoDark.addEventListener("click", () => {
+        <div class="hero-text">
 
-    document.body.classList.toggle("dark");
+            <h1>Olá, eu sou <span>Tatiane Barbosa</span></h1>
 
-    if(document.body.classList.contains("dark")){
-        botaoDark.innerHTML = '<i class="fas fa-sun"></i>';
-    }else{
-        botaoDark.innerHTML = '<i class="fas fa-moon"></i>';
-    }
+            <h2 id="digitando"></h2>
 
-});
+            <p>
+                Estudante do 3º período de Análise e Desenvolvimento de Sistemas,
+                apaixonada por tecnologia e desenvolvimento web.
+                Busco minha primeira oportunidade como Desenvolvedora Web para
+                transformar conhecimento em soluções.
+            </p>
 
+            <div class="botoes">
 
-// ===============================
-// BOTÃO VOLTAR AO TOPO
-// ===============================
+                <a href="#projetos" class="btn">
+                    Ver Projetos
+                </a>
 
-const topo = document.getElementById("topo");
+                <a href="#contato" class="btn2">
+                    Contato
+                </a>
 
-window.addEventListener("scroll", () => {
+            </div>
 
-    if(window.scrollY > 400){
-        topo.style.display = "block";
-    }else{
-        topo.style.display = "none";
-    }
+        </div>
 
-});
+        <div class="hero-img">
 
-topo.addEventListener("click", () => {
+            <img src="assets/perfil.png" alt="Foto de Perfil">
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+        </div>
 
-});
+    </section>
 
+    <section id="sobre" class="container">
 
-// ===============================
-// ANIMAÇÃO AO ROLAR
-// ===============================
+        <h2>Sobre Mim</h2>
 
-const secoes = document.querySelectorAll("section");
+        <p>
 
-function revelar(){
+            Sou estudante de Análise e Desenvolvimento de Sistemas e estou em
+            constante evolução na área de tecnologia.
 
-    const altura = window.innerHeight * 0.85;
+            Desenvolvo projetos acadêmicos e pessoais para colocar em prática os
+            conhecimentos adquiridos em HTML, CSS, JavaScript, Python, PHP,
+            Banco de Dados e Power BI.
 
-    secoes.forEach(secao => {
+            Tenho facilidade para aprender novas tecnologias, gosto de trabalhar
+            em equipe e estou pronta para iniciar minha carreira como
+            Desenvolvedora Web.
 
-        const topoSecao = secao.getBoundingClientRect().top;
+        </p>
 
-        if(topoSecao < altura){
-            secao.classList.add("mostrar");
-        }
+    </section>
 
-    });
+    <section id="habilidades" class="container">
 
-}
+        <h2>Habilidades</h2>
 
-window.addEventListener("scroll", revelar);
+        <div class="skills">
 
-revelar();
+            <div class="skill">
+                <h3>HTML</h3>
+                <div class="barra">
+                    <div class="html"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <div class="barra">
+                    <div class="css"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <div class="barra">
+                    <div class="js"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <div class="barra">
+                    <div class="python"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <h3>PHP</h3>
+                <div class="barra">
+                    <div class="php"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <h3>Power BI</h3>
+                <div class="barra">
+                    <div class="powerbi"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="projetos" class="container">
+
+        <h2>Projetos</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="fas fa-store"></i>
+
+                <h3>Doceria Doce Sabor</h3>
+
+                <p>
+
+                    Site responsivo desenvolvido utilizando HTML, CSS e Bootstrap.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-chart-line"></i>
+
+                <h3>Dashboard Power BI</h3>
+
+                <p>
+
+                    Dashboard para controle de produtividade e indicadores.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-code"></i>
+
+                <h3>Projetos em Python</h3>
+
+                <p>
+
+                    Exercícios de lógica, algoritmos e programação.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="container">
+
+        <h2>Atualmente Estudando</h2>
+
+        <div class="estudos">
+
+            <span>React</span>
+
+            <span>Node.js</span>
+
+            <span>Git</span>
+
+            <span>GitHub</span>
+
+            <span>APIs REST</span>
+
+        </div>
+
+    </section>
+
+    <section id="contato" class="container">
+
+        <
