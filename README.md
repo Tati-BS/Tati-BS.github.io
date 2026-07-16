@@ -9,10 +9,15 @@ Sou estudante de Análise e Desenvolvimento de Sistemas e estou em constante evo
 #Skills
 
 •HTML
+
 •CSS
+
 •JavaScript
+
 •Python
+
 •PHP
+
 •Power BI
 
 #Projetos
@@ -29,14 +34,19 @@ Exercícios de lógica, algoritmos e programação.
 #Atualmente Estudando
 
 -React
+
 -Node.js
+
 -Git
+
 -GitHub
+
 -APIs REST
 
 #contato
 
 e-mail: ts190967@gmail.com 
+
 whatsapp: (85) 98742-1794
 
     
